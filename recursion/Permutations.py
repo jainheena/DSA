@@ -21,3 +21,12 @@ class Solution:
                 nums[i],nums[j]=nums[j],nums[i]
         helper(nums,0)
         return ans
+    
+
+#driver code begin
+if __name__ == '__main__': 
+    t = int (input ())
+    for _ in range (t):
+        nums = int(input().strip().split(" "))
+        ob = Solution()
+        print(ob.permute(nums))
