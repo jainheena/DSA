@@ -27,6 +27,6 @@ class Solution:
 if __name__ == '__main__': 
     t = int (input ())
     for _ in range (t):
-        nums = int(input().strip().split(" "))
+        nums = list(input().strip().split(" "))
         ob = Solution()
         print(ob.permute(nums))
