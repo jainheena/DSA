@@ -19,7 +19,7 @@ def booleanMatrix(matrix):
     
     for i in range(r):
         for j in range(c):
-            if row[i]==1 or col[j]==1:
+            if row[i]==1 or col[j]==1:   #if 1 present at any of the position i or j then the matrix[i][j] will be 1
                 matrix[i][j]=1
 
 #{ 
