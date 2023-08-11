@@ -1,6 +1,5 @@
 #User function Template for python3
 
-
 #Function to modify the matrix such that if a matrix cell matrix[i][j]
 #is 1 then all the cells in its ith row and jth column will become 1.
 def booleanMatrix(matrix):
