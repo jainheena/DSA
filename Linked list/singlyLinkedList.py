@@ -75,11 +75,10 @@ class LL:
         if index==self.size:
             self.deleteLast()
             return
-        prev = self.elementAt(index - 1)
-        val = prev.next.value
-        prev.next = prev.next.next
+        node = self.elementAt(index - 1)
+        val = node.next.value
+        node.next = node.next.next
         self.size -= 1
-        self.size-=1
         print(val)
 
     def find(self,value):
