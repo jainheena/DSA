@@ -17,7 +17,6 @@ class Solution:
             slow=slow.next
             fast=fast.next.next
         return slow.data
-
 #{ 
  # Driver Code Starts
 # Initial Template for Python3
