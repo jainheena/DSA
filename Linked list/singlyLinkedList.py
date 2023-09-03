@@ -51,6 +51,18 @@ class LL:
             temp.next=node
             self.size+=1
 
+    def insertRec(self,val,index):
+        self.head=self._insertRec(val,index,self.head)
+
+    def _insertRec(self,val,index,node):
+        if index==0:
+            temp=Node(val)
+            temp.next=node
+            self.size+=1
+            return temp
+        node.next=self._insertRec(val,index-1,node.next)
+        return node
+
     def deleteFirst(self):
         temp=self.head
         self.head=self.head.next
@@ -101,4 +113,12 @@ class LL:
 
 if __name__ == "__main__":
     ob=LL()
+    ob.insertFirst(23)
+    ob.insertFirst(2)
+    ob.insertFirst(54)
+    ob.insertFirst(37)
+    ob.insertFirst(90)
+    ob.display()
+    ob.insertRec(66,3)
+    ob.display()
     
