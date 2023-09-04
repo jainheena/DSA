@@ -18,7 +18,48 @@ class Solution:
             fast=fast.next.next
             if slow==fast:
                 return True
-        return False
+            return False
+    
+    def countNodesinLoop(head):
+    #Your code here
+        slow=head
+        fast=head
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                temp=slow
+                temp=temp.next
+                length=1
+                while temp!=slow:
+                    temp=temp.next
+                    length+=1
+                return length
+        return 0
+    
+    def findFirstNode(self, head):
+        #code here
+        length=0
+        slow=head
+        fast=head
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+            if slow==fast:
+                length=Solution.countNodesinLoop(slow)
+                break
+        if length==0:
+            return -1
+        s=head
+        f=head
+        while length>0:
+            s=s.next
+            length-=1
+
+        while f!=s:
+            s=s.next
+            f=f.next
+        return s.data
 
 
 #{ 
@@ -67,5 +108,5 @@ if __name__ == '__main__':
         
         LL.loopHere(int(input()))
         
-        print(Solution().detectLoop(LL.head))
+        print(Solution().findFirstNode(LL.head))
 # } Driver Code Ends
