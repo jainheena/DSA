@@ -93,6 +93,16 @@ class LL:
         self.size -= 1
         print(val)
 
+    def recReverse(self,node):
+        if node==self.tail:
+            self.head=self.tail
+            return
+        self.recReverse(node.next)
+        self.tail.next=node
+        self.tail=node
+        self.tail.next=None
+    
+
     def find(self,value):
         node=self.head
         index=0
@@ -120,5 +130,6 @@ if __name__ == "__main__":
     ob.insertFirst(53)
 
     ob.display()
+    ob.reverse(ob.head)
     ob.display()
     

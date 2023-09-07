@@ -14,14 +14,22 @@ class Solution:
     #Function to reverse a linked list.
     def reverseList(self, head):
         # Code here
-        if head==None or head.next==None:
+        if head is None:
             return head
-        rest = self.reverseList(head.next)
-        head.next.next=head
-        head.next=None
-        return rest
-
-
+            
+        cur = head
+        Next = head.next
+        cur.next = None
+        
+        while Next is not None:
+            temp = Next
+            Next = Next.next
+            temp.next = cur
+            cur = temp
+        
+        return cur
+ 
+        
 #{ 
  # Driver Code Starts
 # Node Class    
@@ -64,5 +72,3 @@ if __name__=='__main__':
         printList(newHead)
 
 # } Driver Code Ends
-        
-        
