@@ -50,35 +50,7 @@ class LL:
             node.next=temp.next
             temp.next=node
             self.size+=1
-
-    def bubbleSort(self,row,col):
-        if row==0:
-            return
-        
-        if col<row:
-            first=self.elementAt(col)
-            second=self.elementAt(col+1)
-            if first.value>second.value:
-                #swap
-                if first==self.head:
-                    self.head=second
-                    first.next=second.next
-                    second.next=first
-                elif second==self.tail:
-                    prev=self.elementAt(col-1)
-                    prev.next=second
-                    self.tail=first
-                    first.next=None
-                    second.next=self.tail
-                else:
-                    prev=self.elementAt(col-1)
-                    prev.next=second
-                    first.next=second.next
-                    second.next=first
-            self.bubbleSort(row,col+1)
-        else:
-            self.bubbleSort(row-1,0)
-
+            
     def insertRec(self,val,index):
         self.head=self._insertRec(val,index,self.head)
 
@@ -141,12 +113,12 @@ class LL:
 
 if __name__ == "__main__":
     ob=LL()
-    ob.insertFirst(10)
-    ob.insertFirst(9)
-    ob.insertFirst(8)
-    ob.insertFirst(7)
-    ob.insertFirst(6)
+    ob.insertFirst(23)
+    ob.insertFirst(13)
+    ob.insertFirst(5)
+    ob.insertFirst(49)
+    ob.insertFirst(53)
+
     ob.display()
-    ob.bubbleSort(ob.size-1,0)
     ob.display()
     
