@@ -4,7 +4,7 @@ import math
 class Solution:
 
     def helper(a,n,temp,i,ans):
-        keys =["","","abc","def","jhi","jkl","mno","pqrs","tuv","wxyz"]
+        keys =["","","abc","def","ghi","jkl","mno","pqrs","tuv","wxyz"]
         if i==n:
             ans.append(temp)
             return
